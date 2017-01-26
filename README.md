@@ -1,2 +1,7 @@
-# ASE-Lab-Assignments
+# ASE-Lab-Assignments-Devender Sarda-82
 Lab Assignments Repository
+
+Wiki Links for Lab Assignments
+
+1. Lab Assignment 1: https://github.com/DevenderSarda/ASE-Lab-Assignments/wiki/Lab-Assignment-1
+
