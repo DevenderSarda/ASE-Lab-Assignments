@@ -83,7 +83,6 @@ socialNetwork.controller('homeController', ['$scope', '$location', '$timeout', '
                 homeController.toCity = data.location.city;
                 homeController.toState = data.location.state;
             }
-            alert('http://api.wunderground.com/api/c3bb2ca8a46574cb/conditions/q/' + state +'/' + city+'.json');
             $scope.getWeatherData(city, state, flag);
         })
     };

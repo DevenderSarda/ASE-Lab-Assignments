@@ -27,7 +27,7 @@ socialNetwork.controller('loginController', ['$scope', '$location', '$window', f
     };*/
 
     loginController.registerUser = function () {
-        if(loginController.register_Email === null || loginController.register_Email === '' || loginController.register_Name === null || loginController.register_Name === '' || loginController.register_MobileNo === null || loginController.register_MobileNo === '' || gPictureSrc === null || gPictureSrc === '' || loginController.register_Password === null || loginController.register_Password === '') {
+        if(loginController.register_Email === null || loginController.register_Email === undefined || loginController.register_Email === '' || loginController.register_Name === null || loginController.register_Name === undefined || loginController.register_Name === '' || loginController.register_MobileNo === null || loginController.register_MobileNo === undefined || loginController.register_MobileNo === '' || gPictureSrc === null || gPictureSrc === undefined || gPictureSrc === '' || loginController.register_Password === null || loginController.register_Password === undefined || loginController.register_Password === '') {
                 alert("Please enter all data fields to register.");
         }
         else {
