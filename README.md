@@ -5,3 +5,5 @@ Wiki Links for Lab Assignments
 
 1. Lab Assignment 1: https://github.com/DevenderSarda/ASE-Lab-Assignments/wiki/Lab-Assignment-1
 
+2. Lab Assignment 2: https://github.com/DevenderSarda/ASE-Lab-Assignments/wiki/Lab-Assignment-2
+
