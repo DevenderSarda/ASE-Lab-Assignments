@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="opacity: 0.6">
+<div class="mashup-body">
+
+
+<div>
+    <div class="col-md-8 col-md-offset-3">
+        <h3 style="color: antiquewhite;"><b>Search Top 10 Trending Videos based on Keyword</b></h3>
+    </div>
+    <div  class="col-md-1" style="position: absolute; margin-top: 20px; left: 90%;" class="dropdown">
+            <img  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="//graph.facebook.com/{{mashupController.fb_Id}}/picture?type=large" id="fb_login_user_image" ng-click="mashupController.showSignOut()" style="border-radius: 50%; height: 60px; width: 70px; margin-right: 30px;">
+        <ul ng-click="mashupController.signOut()" class="dropdown-menu btn btn-primary" style="background-color: #337ab7; border-color: #2e6da4; margin-left: -40px;" aria-labelledby="fb_login_user_image">
+            <li style="padding-left: 5px;">Sign Out</li>
+        </ul>
+    </div>
+</div>
+<div style="margin-bottom: 120px;">
+    <div class="col-md-5 col-md-offset-3">
+        <input  type="text" class="form-control" id="searchKey" placeholder="Search Videos" style="width: 100%;" x-webkit-speech>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-primary" style="width: 150px; font-size: 18px; padding-top: 5px; padding-bottom: 5px;" ng-click="mashupController.searchTopVideos()">Search</button>
+    </div>
+</div>
+<div style="height: 100%;">
+    <div id="ifrYT" class="col-md-offset-1" style="height: 100%;">
+        <!--http://www.youtube.com/embed/{{ YTvid }}-->
+        <iframe type="text/html"  ng-repeat="id in mashupController.videoIdList" style="width: 45%; display: inline-block; margin-right: 10px; height: 60%;" ng-src="{{ id.vurl }}" frameborder="1"></iframe>
+    </div>
+</div>
+</div>
+</body>
+</html>
