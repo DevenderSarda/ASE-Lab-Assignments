@@ -11,3 +11,5 @@ Wiki Links for Lab Assignments
 
 4. Lab Assignment 4: https://github.com/DevenderSarda/ASE-Lab-Assignments/wiki/Lab-Assignment-4
 
+5. Lab Assignment 5: https://github.com/DevenderSarda/ASE-Lab-Assignments/wiki/Lab-Assignment-5
+
