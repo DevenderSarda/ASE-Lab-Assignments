@@ -1,0 +1,20 @@
+<ion-view title="Login" id="page2">
+    <ion-content padding="true" class="has-header" style="background: white url('./img/angularjs-ionic-framework.jpg') no-repeat center;">
+        <button id="login-button4" class="button button-positive  button-block" ng-click="fbLogin()">Login with Facebook</button>
+        <form class="list">
+            <ion-list>
+                <label class="item item-input" style="background-color: white;">
+                    <span class="input-label">Username</span>
+                    <input type="text" placeholder="" style="color: black;">
+                </label>
+                <label class="item item-input" style="background-color: white;">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="" style="color: black;">
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <a ng-click="login()" id="login-button1" class="button button-stable  button-block">Log in</a>
+            <a ng-click="goToRegister()" id="login-button2" class="button button-positive  button-block button-clear">Or create an account</a>
+        </form>
+    </ion-content>
+</ion-view>

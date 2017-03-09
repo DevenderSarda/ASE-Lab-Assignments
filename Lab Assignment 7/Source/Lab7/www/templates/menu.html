@@ -1,0 +1,25 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-dark">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="main"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" id="main">
+        <ion-header-bar class="bar-dark">
+            <div class="title">Menu</div>
+        </ion-header-bar>
+        <ion-content padding="false" class="side-menu-right has-header">
+            <ion-list>
+                <ion-item ui-sref="menu.search" menu-close="">Search</ion-item>
+                <ion-item ui-sref="menu.myMusic" menu-close="">My Music</ion-item>
+                <ion-item ui-sref="menu.explore" menu-close="">Explore</ion-item>
+                <ion-item menu-close=""><a href="https://www.youtube.com/"></a>About Us</ion-item>
+                <ion-item ui-sref="login" menu-close="">SignOut</ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>
