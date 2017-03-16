@@ -13,7 +13,7 @@ socialNetwork.config(function($routeProvider) {
             controller: 'loginController',
             controllerAs: 'loginController'
         })
-        .when('/about', {
+        .when('/navya', {
             templateUrl: 'about.html',
             controller: 'aboutController'
         })

@@ -77,7 +77,7 @@ socialNetwork.controller('loginController', ['$scope', '$location', '$window', f
         else
         {
             $location.path("home");
-        }
+    }
     };
 }
 ]);
