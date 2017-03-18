@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nutrition Calculator</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--W3 CSS--->
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <!-- JS -->
+    <!-- load angular, ngRoute, ngAnimate -->
+    <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-route.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="nutritionApp" style="background: url(images/back.jpg) no-repeat center;background-size:cover;">
+<nav class="navbar navbar-default" style="height: 10%;background-color: #1aa3ff">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1 col-md-offset-1">
+                <img src="images/icon.jpg" width="60px" height="55px">
+            </div>
+            <div class="col-md-10">
+                <h2><b>Nutrition Calculator</b></h2>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid" ng-controller="nutrition">
+    <div class="row">
+        <div class="col-md-7 col-md-offset-1">
+            <input id="food_name" type="text" placeholder="Enter Food Name" class="w3-input w3-border w3-round w3-light-grey">
+        </div>
+        <div class="co-md-2">
+            <button class="w3-btn w3-blue w3-round-large w3-ripple" ng-click="searchFood()">Submit</button>
+        </div>
+    </div>
+    <div id="nutrition_body" class="row" style="display:none;">
+
+        <div class="col-md-6 col-md-offset-1">
+            <div>
+                <table class="w3-table w3-striped w3-border w3-centered w3-card-4">
+                    <tr>
+                        <th class="w3-brown" colspan="2">
+                            Food Details
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Food Name</td>
+                        <td class="w3-green">{{foodDetails.name}}</td>
+                    </tr>
+                    <tr class="w3-white">
+                        <td>Food Description</td>
+                        <td class="w3-red">{{foodDetails.detailedDescription.articleBody}}</td>
+                    </tr>
+                    <tr>
+                        <td>Food Image</td>
+                        <td><img ng-src="{{foodDetails.image.contentUrl}}" alt="{{foodDetails.name}}" width="150px" height="150px"></td>
+                    </tr>
+                    <tr class="w3-white">
+                        <td>More Info</td>
+                        <td>{{foodDetails.detailedDescription.url}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div ng-repeat="food in foodItems | limitTo:quantity" class="col-md-4">
+            <div class="clearfix" ng-if="$index % 1 == 0"></div>
+            <table class="w3-table w3-striped w3-border w3-centered w3-card-4">
+                <tr>
+                    <th class="w3-indigo" colspan="2">
+                        Food Nutritional Details
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        Item Name
+                    </td>
+                    <td>
+                        {{food.fields.item_name}}
+                    </td>
+                </tr>
+                <tr class="w3-white">
+                    <td>
+                        Brand Name
+                    </td>
+                    <td>
+                        {{food.fields.brand_name}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Total Calories
+                    </td>
+                    <td>
+                        {{food.fields.nf_calories}}
+                    </td>
+                </tr>
+                <tr style="background-color: #fff !important;">
+                    <td>
+                        Total Fat
+                    </td>
+                    <td>
+                        {{food.fields.nf_total_fat}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
