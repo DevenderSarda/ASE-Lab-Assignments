@@ -38,16 +38,6 @@ app.get('/getdata/:food_name', function (req, res) {
             res.write(JSON.stringify(result));
             res.end();
         });
-
-
-        /*result.food_details.push(food_values);
-
-        res.contentType('application/json');
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-        res.write(JSON.stringify(food_values));
-        res.end();*/
-
     });
     console.log(result);
 });
