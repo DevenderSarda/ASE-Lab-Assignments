@@ -4,6 +4,7 @@
 var socialNetwork = angular.module('socialNetwork', ['ngRoute', 'ngSanitize']);
 var gPictureSrc = '';
 var gUserData = '';
+var gProfileData = '';
 
 socialNetwork.run(function ($http) {
     // Sends this header with any AJAX request
@@ -27,6 +28,11 @@ socialNetwork.config(function($routeProvider) {
             templateUrl: 'home.html',
             controller: 'homeController',
             controllerAs: 'homeController'
+        })
+        .when('/profile', {
+            templateUrl: 'profile.html',
+            controller: 'profileController',
+            controllerAs: 'profileController'
         })
         .otherwise({ redirectTo: '/' });
 

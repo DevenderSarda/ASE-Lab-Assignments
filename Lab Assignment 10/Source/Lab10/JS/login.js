@@ -27,7 +27,7 @@ socialNetwork.controller('loginController', ['$scope', '$location', '$window', '
     };*/
 
     loginController.registerUser = function () {
-        if(loginController.register_Email === null || loginController.register_Email === undefined || loginController.register_Email === '' || loginController.register_Name === null || loginController.register_Name === undefined || loginController.register_Name === '' || loginController.register_MobileNo === null || loginController.register_MobileNo === undefined || loginController.register_MobileNo === '' || gPictureSrc === null || gPictureSrc === undefined || gPictureSrc === '' || loginController.register_Password === null || loginController.register_Password === undefined || loginController.register_Password === '') {
+        if(loginController.register_Email === null || loginController.register_Email === undefined || loginController.register_Email === '' || loginController.register_Name === null || loginController.register_Name === undefined || loginController.register_Name === '' || loginController.register_MobileNo === null || loginController.register_MobileNo === undefined || loginController.register_MobileNo === '' || loginController.register_Password === null || loginController.register_Password === undefined || loginController.register_Password === '') {
                 alert("Please enter all data fields to register.");
         }
         else {
@@ -36,7 +36,6 @@ socialNetwork.controller('loginController', ['$scope', '$location', '$window', '
                     'email': loginController.register_Email,
                     'name': loginController.register_Name,
                     'MobileNo': loginController.register_MobileNo,
-                    'Picture': gPictureSrc,
                     'Password': loginController.register_Password
                 };
                 var email = loginController.register_Email;
@@ -85,11 +84,12 @@ socialNetwork.controller('loginController', ['$scope', '$location', '$window', '
     };
 
     loginController.signIn = function () {
-        var x=$http.get('http://127.0.0.1:8081/signin',{params: {email:loginController.login_email}});
-        x.success(function (data) {
-            if(data!=null) {
-                if (loginController.login_email === data.email & loginController.login_password === data.Password) {
-                    $location.path("userprofile");
+        $http.get('http://127.0.0.1:8081/signin',{params: {email:loginController.login_email}}).then(function (response) {
+            if(response.data!=null) {
+                alert('Success');
+                if (loginController.login_email === response.data.email & loginController.login_password === response.data.Password) {
+                    gProfileData = response.data;
+                    $location.path("profile");
                 }
                 else {
                     alert("Invalid login or password");

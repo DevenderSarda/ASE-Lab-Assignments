@@ -151,5 +151,13 @@ span.input-group-addon i {
     margin: 0 .75em;
 }
 
+.profile-body {
+    background: url(../Images/MEAN.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 
 

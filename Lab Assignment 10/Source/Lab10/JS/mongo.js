@@ -45,7 +45,7 @@ app.get('/signin', function (req, res,next) {
             res.write("Failed, Error while connecting to Database");
             res.end();
         }
-        z = req.query.name;
+        z = req.query.email;
         db.collection('lab10', function (err, collection) {
             collection.findOne({'email': z}, function (err, item) {
                 if (err) {
